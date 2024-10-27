@@ -30,12 +30,12 @@ pipeline{
         }
         stage('run dockerfile'){
           steps{
-               sh 'docker build -t myimg .'
+               sh 'docker build -t ajay/banking-project-demo:3.0 .'
            }
          }
         stage('port expose'){
             steps{
-                sh 'docker run -dt -p 8091:8091 --name c000 myimg'
+                sh 'docker run -dt -p 8091:8091 --name c000 ajay/banking-project-demo:3.0'
             }
         }   
     }
